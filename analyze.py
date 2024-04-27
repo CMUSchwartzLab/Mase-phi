@@ -1,4 +1,3 @@
-
 import copy
 import gzip
 from zipfile import ZipFile
