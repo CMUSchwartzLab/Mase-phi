@@ -4,48 +4,48 @@ Marker selection strategies for ctDNA guided by phylogenetic inference.
 ***********
 Main Files:
 ***********
-process_tracerx_bootstrap.py
-    Generates summary and aggregate files based on trees generated with phyloWGS on the patient data (bootstrapped).
-run_data.py
-    Takes the summary and aggregate files and outputs an initial set of significant biomarkers. These biomarkers can be used in a biological assay for further inspection.
-run_simu_select_adjust.py, run_simu_select_track.py
-    These files take the output of a biological assay using the initial selected biomarkers, and futher update the empirical trees, track mutations over time, and output a new set of optimized biomarkers. These new biomarkers can be run in another round of biological assay.
-iterative_pipeline_real.py
-    With the output of the biological assay, this file produces phylogentic trees of the tumor DNA over specific points in time, which helps view the progression of the cancer over time.
+- process_tracerx_bootstrap.py
+    - Generates summary and aggregate files based on trees generated with phyloWGS on the patient data (bootstrapped).
+- run_data.py
+    - Takes the summary and aggregate files and outputs an initial set of significant biomarkers. These biomarkers can be used in a biological assay for further inspection.
+- run_simu_select_adjust.py, run_simu_select_track.py
+    - These files take the output of a biological assay using the initial selected biomarkers, and futher update the empirical trees, track mutations over time, and output a new set of optimized biomarkers. These new biomarkers can be run in another round of biological assay.
+- iterative_pipeline_real.py
+    - With the output of the biological assay, this file produces phylogentic trees of the tumor DNA over specific points in time, which helps view the progression of the cancer over time.
 
 ***********************************
 Other support files for the project
 ***********************************
-adjust_tree_distribution.py
-    Uses Bayesian inference to update tree distribution.
-analyze.py
-    Contains helper functions to help analyze trees.
-evaluate_tree_fraction.py
-    Generates a figure that shows the trackable fractions of simulated tumor clonal population in noisy liquid biopsy samples. The lines show the change of trackable fractions as the selected marker number increases, comparing marker selection optimized for the task against random marker selection.
-evaluate.py
-    Computes distances between true and estimated trees using CASet and DISC metrics. Collects evaluation results and stores them in a pandas DataFrame. Visualizes the evaluation results using seaborn's catplot.
-optimize_fraction.py
-    Uses Gurobi to solve integer linear programs meant to find the optimal fractions or weights to pick the best biomarkers.
-optimize.py
-    Contains helper functions to optimize phylogenetic trees based on the clonal frequencies of genetic mutations. 
-visualize.py
-    Generates the trees into graphs.
+- adjust_tree_distribution.py
+    - Uses Bayesian inference to update tree distribution.
+- analyze.py
+    - Contains helper functions to help analyze trees.
+- evaluate_tree_fraction.py
+    - Generates a figure that shows the trackable fractions of simulated tumor clonal population in noisy liquid biopsy samples. The lines show the change of trackable fractions as the selected marker number increases, comparing marker selection optimized for the task against random marker selection.
+- evaluate.py
+    - Computes distances between true and estimated trees using CASet and DISC metrics. Collects evaluation results and stores them in a pandas DataFrame. Visualizes the evaluation results using seaborn's catplot.
+- optimize_fraction.py
+    - Uses Gurobi to solve integer linear programs meant to find the optimal fractions or weights to pick the best biomarkers.
+- optimize.py
+    - Contains helper functions to optimize phylogenetic trees based on the clonal frequencies of genetic mutations. 
+- visualize.py
+    - Generates the trees into graphs.
 
-simulation (sim) folder
-bootstrap.py
-    Contains helper functions that take the patient data and "bootstraps" it, meaning that we generate similar data for testing. 
-pipeline.py 
-    Uses bootstrap.py functions to integrate clonal tree & variant mutation simulation with bootstrap in a pre- & post-surgery scenario.
-simulate.py
-    Simulates the ddPCR process.
+**simulation (sim) folder**
+- bootstrap.py
+    - Contains helper functions that take the patient data and "bootstraps" it, meaning that we generate similar data for testing. 
+- pipeline.py 
+    - Uses bootstrap.py functions to integrate clonal tree & variant mutation simulation with bootstrap in a pre- & post-surgery scenario.
+- simulate.py
+    - Simulates the ddPCR process.
 
 ******************
 External Resources
 ******************
-PhyloWGS [https://github.com/morrislab/phylowgs/blob/master/README.md]
-CASET and DISC from this ([repository](https://bitbucket.org/oesperlab/stereodist/src/master/)). 
-A ([Gurobi](https://www.gurobi.com/)) license to solve optimization problems.
-Python3
+1. ([PhyloWGS](https://github.com/morrislab/phylowgs/blob/master/README.md)).
+2. CASET and DISC from this ([repository](https://bitbucket.org/oesperlab/stereodist/src/master/)). 
+3. ([Gurobi](https://www.gurobi.com/)) license to solve optimization problems.
+4. Python3
 
 ********************************
 Building and running the project
