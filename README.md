@@ -42,9 +42,9 @@ Other support files for the project
 ******************
 External Resources
 ******************
-1. ([PhyloWGS](https://github.com/morrislab/phylowgs/blob/master/README.md)).
-2. CASET and DISC from this ([repository](https://bitbucket.org/oesperlab/stereodist/src/master/)). 
-3. ([Gurobi](https://www.gurobi.com/)) license to solve optimization problems.
+1. [PhyloWGS](https://github.com/morrislab/phylowgs/blob/master/README.md).
+2. CASET and DISC from this [repository](https://bitbucket.org/oesperlab/stereodist/src/master/). 
+3. [Gurobi](https://www.gurobi.com/) license to solve optimization problems.
 4. Python3
 
 ********************************
