@@ -232,6 +232,7 @@ def optimize_fraction_weighted_overall(E_list, M_list, F_hat_list, tree_freq_lis
         y_list.append(y)
         y_bin_list.append(y_bin)
         t_list.append(t)
+        # TO-DO: Add constraint to model based on how medically important the subclones are.
     model.setObjective(gp.quicksum(obj_list[i] * tree_freq_list[i] for i in range(n_trees)), gp.GRB.MAXIMIZE)
     model.update()
     model.optimize()
