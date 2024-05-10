@@ -75,7 +75,9 @@ def ncr(n, r): ##for python 3.7
     return math.factorial(n) // math.factorial(r) // math.factorial(n-r)
 def integrand(f2, f1, d1, d2, r1, r2):
     try:
-        return math.comb(d1, r1) * (f1 ** r1) * ((1 - f1) ** (d1 - r1)) * math.comb(d2, r2) * (f2 ** r2) * ((1 - f2) ** (d2 - r2))
+        # return math.comb(d1, r1) * (f1 ** r1) * ((1 - f1) ** (d1 - r1)) * math.comb(d2, r2) * (f2 ** r2) * ((1 - f2) ** (d2 - r2))
+        return math.exp(math.log(math.comb(d1, r1)) + r1 * math.log(f1) + (d1 - r1) * math.log(1 - f1) +
+               math.log(math.comb(d2, r2)) + r2 * math.log(f2) + (d2 - r2) * math.log(1 - f2))
     except AttributeError:
         return ncr(d1, r1) * (f1 ** r1) *((1 - f1)**(d1-r1)) * ncr(d2, r2) * (f2 ** r2) * ((1-f2) ** (d2-r2))
 
